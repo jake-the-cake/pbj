@@ -1,13 +1,13 @@
 :root {
-  --primary-hue: 295;
-  --secondary-hue: 52;
+  --primary-hue: 24;
+  --secondary-hue: 212;
 
-  --primary: var(--primary-hue), 78%, 26%;
-  --accent: var(--primary-hue), 78%, 13%;
+  --primary: var(--primary-hue), 68%, 31%;
+  --accent: var(--primary-hue), 95%, 22%;
   --secondary: var(--secondary-hue), 88%, 64%;
 
   --light: var(--primary-hue), 100%, 96%;
-  --dark: var(--primary-hue), 100%, 9%;
+  --dark: var(--primary-hue), 100%, 7%;
 }
 
 *, *::after, *::before {
@@ -18,13 +18,57 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   background-color: hsl(var(--primary));
   width: 100vw;
-  min-height: 100vh;
+  min-height: 110vh;
   margin: 0;
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  justify-content: start;
   flex-direction: column;
 }
 
+.pill {
+  border-radius: 9999px;
+}
+
+.p-1 {
+  padding: .5rem;
+}
+
+.accent-el {
+  background-color: hsl(var(--secondary), .8);
+  outline-color: transparent;
+  border-color: transparent;
+}
+
+.accent-el:hover {
+  background-color: hsl(var(--secondary));
+}
+
 .large-nav {
-  background-color: hsl(var(--accent));
+  background-color: hsl(var(--light));
+  display: grid;
+}
+
+.hidden-nav {
+  padding-block: .5rem;
+  background-color: hsl(var(--dark));
+  color: hsl(var(--light));
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: -100%;
+  transition: top .3s ease;
+}
+
+.flex-g2 {
+  display: flex;
+  gap: 1rem;
+}
+
+.pl-2 { padding-left: 1rem; }
+.pr-2 { padding-right: 1rem; }
+
+.top-0 {
+  top: 0px !important;
 }
