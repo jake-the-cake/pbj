@@ -1,9 +1,9 @@
 :root {
-  --primary-hue: 24;
-  --secondary-hue: 212;
+  --primary-hue: 212;
+  --secondary-hue: 315;
 
-  --primary: var(--primary-hue), 68%, 31%;
-  --accent: var(--primary-hue), 95%, 22%;
+  --primary: var(--primary-hue), 78%, 41%;
+  --accent: var(--primary-hue), 100%, 20%;
   --secondary: var(--secondary-hue), 88%, 64%;
 
   --light: var(--primary-hue), 100%, 96%;
@@ -12,6 +12,10 @@
 
 *, *::after, *::before {
   box-sizing: border-box;
+}
+
+button {
+  cursor: pointer;
 }
 
 body {
@@ -106,18 +110,23 @@ body {
   position: absolute;
 }
 
-.page-title h1 {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  position: relative;
-  z-index: 10;
-  font-size: 6rem;
-  font-weight: 700;
+.page-title * {
+  background-image: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--primary), .6));
+  color: transparent;
+  background-clip: text;
   padding: 0;
   margin: 0;
+  z-index: 10;
   letter-spacing: 3px;
-  color: hsl(var(--primary));
-  text-shadow: 2px 2px 0 hsl(var(--dark)),
-              -2px 2px 0 hsl(var(--dark)),
-              -2px -2px 0 hsl(var(--dark)),
-              2px -2px 0 hsl(var(--dark));
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  position: relative;
+}
+
+.page-title h1 {
+  font-weight: 700;
+  font-size: 6rem;
+}
+
+.page-title span {
+  font-size: 3rem;
 }
