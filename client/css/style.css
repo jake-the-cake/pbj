@@ -47,6 +47,7 @@ body {
 .large-nav {
   background-color: hsl(var(--light));
   display: grid;
+  min-height: 400px;
 }
 
 .hidden-nav {
@@ -55,7 +56,9 @@ body {
   color: hsl(var(--light));
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: fixed;
+  z-index: 1000;
   width: 100%;
   top: -100%;
   transition: top .3s ease;
@@ -71,4 +74,50 @@ body {
 
 .top-0 {
   top: 0px !important;
+}
+
+.primary-svg {
+  fill: transparent;
+  stroke: hsl(var(--primary));
+}
+
+.trans-svg {
+  fill: transparent;
+  stroke: hsl(var(--secondary), .2);
+}
+
+.flex-auto {
+  flex: auto;
+}
+
+.fit {
+  width: fit-content;
+}
+
+.flex-middle {
+  align-items: center;
+}
+
+.relative {
+  position: relative;
+}
+
+.large-logo-bg {
+  position: absolute;
+}
+
+.page-title h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  position: relative;
+  z-index: 10;
+  font-size: 6rem;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 3px;
+  color: hsl(var(--primary));
+  text-shadow: 2px 2px 0 hsl(var(--dark)),
+              -2px 2px 0 hsl(var(--dark)),
+              -2px -2px 0 hsl(var(--dark)),
+              2px -2px 0 hsl(var(--dark));
 }
