@@ -1,0 +1,30 @@
+:root {
+  --primary-hue: 295;
+  --secondary-hue: 52;
+
+  --primary: var(--primary-hue), 78%, 26%;
+  --accent: var(--primary-hue), 78%, 13%;
+  --secondary: var(--secondary-hue), 88%, 64%;
+
+  --light: var(--primary-hue), 100%, 96%;
+  --dark: var(--primary-hue), 100%, 9%;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: hsl(var(--primary));
+  width: 100vw;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.large-nav {
+  background-color: hsl(var(--accent));
+}

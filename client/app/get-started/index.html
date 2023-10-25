@@ -1,0 +1,54 @@
+<div class="app__container form-app" id="get-started-app">
+  <div class="form-app__header" id="form-header">
+    <div class="form-app__title--outer">
+      <div class="form-app__title--inner">The Basics</div>
+    </div>
+    <div class="form-app__title--outer">
+      <div class="form-app__title--inner">Page 2</div>
+    </div>
+    <div class="form-app__title--outer">
+      <div class="form-app__title--inner">Page 3</div>
+    </div>
+  </div>
+  <div class="form-app__actions">
+    <div class="form-app__page-counter">
+      <div class="form-app__page-counter--marker active-marker"></div>
+      <div class="form-app__page-counter--marker"></div>
+      <div class="form-app__page-counter--marker"></div>
+    </div>
+    <div class="text-center paragraph text-small" id="form-page-blob">
+      <p>
+        What a great day to being! Let's start this path to wellness with a few basics about yourself. 
+      </p>
+    </div>
+  </div>
+  <div class="form-app__display" id="form-display">
+    <form class="form__container">
+      <div class="form__element--h">
+        <label for="name">My name is</label>
+        <input type="text" name="name" />
+      </div>
+      <div class="form__row">
+        <div class="form__element--v">
+          <ul class="form-checkbox">
+            <label for="contact-method">Preferred Contact</label>
+            <li><input type="radio" name="contact-method" value="phone">Phone</input></li>
+            <li><input type="radio" name="contact-method" value="email">Email</input></li>
+            <li><input type="radio" name="contact-method" value="both">Both</input></li>
+          </ul>
+          <input type="text" name="email" />
+        </div>
+        <div class="form__element--v">
+          <label for="email">Email</label>
+          <input type="text" name="email" />
+        </div>
+        <div class="form__element--v">
+          <label for="phone">Cell Phone</label>
+          <input type="text" name="phone" />
+        </div>
+      </div>
+      <button>Submit</button>
+    </form>
+  </div>
+</div>
+<script src="js/app/get-started.js"></script>
