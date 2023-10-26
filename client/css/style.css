@@ -1,22 +1,24 @@
 :root {
   --primary-hue: 212;
-  --secondary-hue: 315;
+  --secondary-hue: 310;
 
   --primary: var(--primary-hue), 78%, 41%;
   --accent: var(--primary-hue), 100%, 20%;
-  --secondary: var(--secondary-hue), 88%, 64%;
+  --secondary: var(--secondary-hue), 88%, 69%;
 
   --light: var(--primary-hue), 100%, 96%;
   --dark: var(--primary-hue), 100%, 7%;
+
+  --transition-sm: 300ms;
+  --transition-md: 500ms;
+  --transition-lg: 750ms;
 }
 
 *, *::after, *::before {
   box-sizing: border-box;
 }
 
-button {
-  cursor: pointer;
-}
+button, .pointer { cursor: pointer;}
 
 body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -30,6 +32,25 @@ body {
   flex-direction: column;
 }
 
+.large-nav {
+  background-image: linear-gradient(35deg, hsl(var(--light)), hsl(var(--light), .7));
+  display: grid;
+  min-height: 400px;
+}
+
+.hidden-nav {
+  padding-block: .5rem;
+  background-color: hsl(var(--dark));
+  color: hsl(var(--light));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  top: -100%;
+  transition: top var(--transition-lg) ease;
+}
 .pill {
   border-radius: 9999px;
 }
@@ -46,27 +67,9 @@ body {
 
 .accent-el:hover {
   background-color: hsl(var(--secondary));
+  transition: background-color var(--transition-sm) linear;
 }
 
-.large-nav {
-  background-color: hsl(var(--light));
-  display: grid;
-  min-height: 400px;
-}
-
-.hidden-nav {
-  padding-block: .5rem;
-  background-color: hsl(var(--dark));
-  color: hsl(var(--light));
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  z-index: 1000;
-  width: 100%;
-  top: -100%;
-  transition: top .3s ease;
-}
 
 .flex-g2 {
   display: flex;
@@ -75,20 +78,13 @@ body {
 
 .pl-2 { padding-left: 1rem; }
 .pr-2 { padding-right: 1rem; }
+.pi-2 { padding-inline: 1rem;}
 
 .top-0 {
   top: 0px !important;
 }
 
-.primary-svg {
-  fill: transparent;
-  stroke: hsl(var(--primary));
-}
 
-.trans-svg {
-  fill: transparent;
-  stroke: hsl(var(--secondary), .2);
-}
 
 .flex-auto {
   flex: auto;
@@ -102,15 +98,18 @@ body {
   align-items: center;
 }
 
-.relative {
-  position: relative;
-}
-
+/* PAGE TITLE AND LOGO LAYOUT */
 .large-logo-bg {
   position: absolute;
 }
-
+.page-title {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .page-title * {
+  --font-height: 9rem;
   background-image: linear-gradient(45deg, hsl(var(--accent)), hsl(var(--primary), .6));
   color: transparent;
   background-clip: text;
@@ -118,15 +117,58 @@ body {
   margin: 0;
   z-index: 10;
   letter-spacing: 3px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   position: relative;
 }
-
 .page-title h1 {
   font-weight: 700;
-  font-size: 6rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: var(--font-height);
+}
+.page-title span {
+  --primary: var(--secondary-hue), 100%, 15%;
+  --accent: var(--dark);
+  font-size: calc(var(--font-height) / 2);
+  font-family: cursive;
+  margin-top: calc(var(--font-height) / -4.2);
 }
 
-.page-title span {
-  font-size: 3rem;
+
+.abs-center-x {
+  position: absolute;
+  width: fit-content;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
+
+/* OPACITY >>> format: 't-' + [n * 10%] */
+.t-1 { opacity: .1;}
+.t-2 { opacity: .2;}
+.t-3 { opacity: .3;}
+.t-4 { opacity: .4;}
+.t-5 { opacity: .5;}
+.t-6 { opacity: .6;}
+.t-7 { opacity: .7;}
+.t-8 { opacity: .8;}
+.t-9 { opacity: .9;}
+
+/* POSITION PROPERTIES */
+.relative { position: relative;}
+.absolute { position: absolute;}
+
+/* STROKES (sets fill to transparent by default) */
+.primary-stroke,
+.secondary-stroke,
+.accent-stroke,
+.light-stroke,
+.dark-stroke { fill: transparent;}
+.primary-stroke { stroke: hsl(var(--primary)) !important;}
+.secondary-stroke { stroke: hsl(var(--secondary)) !important;}
+.accent-stroke { stroke: hsl(var(--accent)) !important;}
+.light-stroke { stroke: hsl(var(--light)) !important;}
+.dark-stroke { stroke: hsl(var(--dark)) !important;}
+
+/* ROTATION */
+.rotate-90 { transform: rotate(90deg);}
+.rotate-180 { transform: rotate(180deg);}
+.rotate-270 { transform: rotate(270deg);}
