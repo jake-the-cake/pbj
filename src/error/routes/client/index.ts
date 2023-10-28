@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { createHtmlDoc } from "../../controllers/html"
+import { createHtmlDoc } from "../../../controllers/html"
 
 const router = Router()
 

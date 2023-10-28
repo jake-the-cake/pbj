@@ -4,7 +4,7 @@ import cors from 'cors'
 import CONFIG from "../config"
 import { ServerConfig } from "./types"
 import { createHtmlDoc } from "../controllers/html"
-import routes from "../routes"
+import routes from "../error/routes"
 
 function expressServer(config: ServerConfig) {
 	const app = express()

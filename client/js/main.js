@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 	useHiddenNavigation('hidden-nav')
-	
+	const headerQuoteForm = document.getElementById('header-quote')
+	if (headerQuoteForm) headerQuoteForm.onsubmit = useModal('quote', 'formSubmitted')
 	
 	// relocateUnderNavbar()
 })
@@ -21,4 +22,48 @@ function relocateUnderNavbar(spaceInPx = 16) {
 		document.body.style.minHeight = 'auto'
 	}
 	console.log(navigationHeight)
+}
+
+function isStringArray(array) {
+	let pass = false
+	if (Array.isArray(array) && array.length > 0) pass = true
+	array.forEach(item => {
+		if (pass === 'false') return
+		if (typeof item !== 'string') pass = false
+	})
+	return pass
+}
+
+function htmlElement(type) {
+	const element = document.createElement(type)
+	element.addClass = (...classes) => {
+		if (isStringArray(classes) && classes.length > 0) element.classList = classes
+		return element
+	}
+	element.addId = (id) => {
+		if (id && typeof id === 'string') element.id = id
+		return element
+	}
+	element.displayModal = () => {
+		document.body.appendChild(element)
+		return element
+	}
+	return element
+}
+
+function useModal(name, callback) {
+	return (e) => {
+		e.preventDefault()
+		const background = htmlElement('div').addClass('modal-bg').addId('modal')
+		background.displayModal()
+		background.addEventListener('click', () => {
+			background.classList.add('transparent')
+			setTimeout(() => { document.body.removeChild(background) }, 700)
+		})
+		switch (name) {
+			case 'quote':
+				
+		}
+		// callback(e.target)
+	}
 }
