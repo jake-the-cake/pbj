@@ -46,6 +46,14 @@ function htmlElement(type) {
 	}
 	element.displayModal = () => {
 		document.body.appendChild(element)
+		element.hideModal()
+		return element
+	}
+	element.hideModal = () => {
+		element.addEventListener('click', () => {
+			element.classList.add('transparent')
+			setTimeout(() => { document.body.removeChild(element) }, 700)
+		})
 		return element
 	}
 	return element
@@ -56,13 +64,9 @@ function useModal(name, callback) {
 		e.preventDefault()
 		const background = htmlElement('div').addClass('modal-bg').addId('modal')
 		background.displayModal()
-		background.addEventListener('click', () => {
-			background.classList.add('transparent')
-			setTimeout(() => { document.body.removeChild(background) }, 700)
-		})
 		switch (name) {
 			case 'quote':
-				
+
 		}
 		// callback(e.target)
 	}
