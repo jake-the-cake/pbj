@@ -1,7 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
 	useHiddenNavigation('hidden-nav')
 	const headerQuoteForm = document.getElementById('header-quote')
+	const navQuoteForm = document.getElementById('nav-quote')
 	if (headerQuoteForm) headerQuoteForm.onsubmit = useModal('quote', 'formSubmitted')
+	if (navQuoteForm) navQuoteForm.onsubmit = useModal('quote', 'formSubmitted')
 	
 	// relocateUnderNavbar()
 })

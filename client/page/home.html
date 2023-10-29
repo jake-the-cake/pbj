@@ -1,18 +1,26 @@
 <!-- Hidden Nav -->
 <nav class="hidden-nav" id="hidden-nav">
-	<div class="flex-g2 pl-2 flex-middle">
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 15 53 53" width="25" class="rotate-270">
-			<path d="M10 25 L10 65" stroke-width="4" class="primary-stroke" />
-			<path d="M5 20 L15 20 Q 70 25 18 40" stroke-width="4" class="primary-stroke" />
-			<path d="M17 15 L17 50 Q 13 64 2 53" stroke-width="4" class="primary-stroke" />
-			<path d="M12 58 L22 58 Q 77 51 25 38" stroke-width="4" class="primary-stroke" />
-		</svg>
-		<div class="fit">
-			PBJ Services
+	<a href="/" class="unset pointer">
+		<div class="flex gap-1 pl-2 flex-middle">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 15 53 53" width="25" class="rotate-270">
+				<path d="M10 25 L10 65" stroke-width="4" class="primary-stroke" />
+				<path d="M5 20 L15 20 Q 70 25 18 40" stroke-width="4" class="primary-stroke" />
+				<path d="M17 15 L17 50 Q 13 64 2 53" stroke-width="4" class="primary-stroke" />
+				<path d="M12 58 L22 58 Q 77 51 25 38" stroke-width="4" class="primary-stroke" />
+			</svg>
+			<div class="fit ls-3 lg-message hover-secondary">PBJ Services</div>
 		</div>
-	</div>
-	<div class="flex-g2 pr-2">
-		<button class="accent-el p-1 pill">Get A Quote</button>
+	</a>
+	<div class="flex gap-2 pr-2">
+		<ul class="col-1to3 center flex gap-3 unset no-list md-info">
+			<li><a class="no-dec text-primary hover-secondary" href="/about">Who Is PBJ</a></li>
+			<li><a class="no-dec text-primary hover-secondary" href="/services">Our Services</a></li>
+			<li><a class="no-dec text-primary hover-secondary" href="/store">Online Store</a></li>
+			<li><a class="no-dec text-primary hover-secondary" href="/contact">Contact Us</a></li>
+		</ul>
+		<form id="nav-quote">
+			<button class="secondary-el py-1 px-3 pill sm-message">Get A Quote</button>
+		</form>
 		<div class="hamburger">
 			<!-- {! svg: hamburger !} -->
 			<!-- {! svg: down-arrow !} -->
@@ -22,15 +30,46 @@
 
 <!-- Navbar -->
 <nav class="large-nav center relative" id="large-nav">
-	<div class="page-title">
-		<h1>PBJ</h1>
-		<span>Service Co</span>
-	</div>
+	<!-- Navigation Links -->
+	<ul class="col-1to3 center flex gap-4 unset no-list ls-3 md-message cursive lh-08">
+		<li><a class="text-dark hover-secondary" href="/about">Who Is PBJ</a></li>
+		<li><a class="text-dark hover-secondary" href="/services">Our Services</a></li>
+		<li><a class="text-dark hover-secondary" href="/store">Online Store</a></li>
+		<li><a class="text-dark hover-secondary" href="/contact">Contact Us</a></li>
+	</ul>
+
+	<!-- Title Card -->
+	<a href="/" class="unset pointer">
+		<div class="page-title">
+			<h1>PBJ</h1>
+			<span>Service Co</span>
+		</div>
+	</a>
+
+	<!-- Welcome Message -->
 	<div class="lg-info center lh-14">
 		Our mission is to provide hassle-free hauling and handyman services, tailored to your needs.
 	</div>
-	<div class="col-1to3 md-message">Servicing New Jersey in Ocean, Monmouth, and beyond.</div>
-	<div class="">Services To Fit All Needs</div>
+	
+	<!-- LOCATION DESIGNATION -->
+	<div class="col-1to3 md-message text-dark ls-5 sm-text-outline-primary">
+		Servicing New Jersey in Ocean, Monmouth, and beyond.
+	</div>
+
+	<!-- CAROUSEL -->
+	<div class="flex-col gap-2">
+		<div class="md-message ls-2 text-dark">Find The Right Solution From PBJ</div>
+		<div id="carousel">
+
+		</div>
+		<div id="learn-more" class="flex gap-1 center">
+			<button class="secondary-el px-2 py-1 br-1 sm-message">Learn More</button>
+			<span class="sm-info">or</span>
+			<a href="/services" class="text-dark hover-secondary sm-message">View All Services</a>
+		</div>
+	</div>
+	
+	<!-- Call to Action -->
 	<div class="accent-card text-light flex-col gap-2">
 		<div class="lg-message text-secondary sm-shadow-dark">Get A Free Quote</div>
 		<form class="flex-col gap-2 center" id="header-quote">
@@ -38,7 +77,9 @@
 			<button class="primary-el py-2 px-5 pill md-message">Check Now!</button>
 		</form>
 	</div>
-	<svg xmlns="http://www.w3.org/2000/svg" class="absolute rotate-270 t-1 abs-center-x" viewBox="0 15 53 53" width="400">
+
+	<!-- Background logo -->
+	<svg xmlns="http://www.w3.org/2000/svg" class="absolute rotate-270 t-1 abs-center-x z-1" viewBox="0 15 53 53" width="400">
 		<path d="M10 25 L10 65" stroke-width="4" class="secondary-stroke" />
 		<path d="M5 20 L15 20 Q 70 25 18 40" stroke-width="4" class="secondary-stroke" />
 		<path d="M17 15 L17 50 Q 13 64 2 53" stroke-width="4" class="secondary-stroke" />

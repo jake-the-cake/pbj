@@ -1,20 +1,22 @@
 :root {
-  --primary-hue: 212;
-  --secondary-hue: 310;
-
-  --primary: var(--primary-hue), 78%, 41%;
+  --primary-hue: 115;
+  --secondary-hue: 215;
+  color: hsl(34, 46%, 42%);
+  --primary: var(--primary-hue), 48%, 51%;
   --accent: var(--primary-hue), 100%, 20%;
-  --secondary: var(--secondary-hue), 88%, 69%;
-
+  --secondary: var(--secondary-hue), 80%, 64%;
+  
   --light: var(--primary-hue), 100%, 96%;
   --dark: var(--primary-hue), 100%, 7%;
   
   --transition-sm: 300ms;
   --transition-md: 500ms;
   --transition-lg: 750ms;
-
+  
   --mobile-width: 375px;
 }
+
+.unset { all: unset; }
 
 *, *::after, *::before {
   box-sizing: border-box;
@@ -46,6 +48,15 @@ body {
   min-height: 400px;
   color: hsl(var(--dark));
   padding-block: 2rem;
+  position: relative;
+}
+
+.large-nav * {
+  z-index: 2;
+}
+
+.z-1 {
+  z-index: 1;
 }
 
 .hidden-nav {
@@ -60,6 +71,10 @@ body {
   width: 100%;
   top: -100%;
   transition: top var(--transition-lg) ease;
+}
+
+.hamburger {
+  display: none;
 }
 
 .modal-bg {
@@ -105,14 +120,17 @@ body {
 
 /* ELEMENT STYLES */
 .accent-el,
-.primary-el {
+.primary-el,
+.secondary-el,
+.light-el,
+.dark-el {
   outline-color: transparent;
   border-color: transparent;
   transition: background-color var(--transition-sm) linear,
               border-color var(--transition-sm) linear;
 }
-.accent-el { background-color: hsl(var(--secondary), .8);}
-.accent-el:hover { background-color: hsl(var(--secondary));}
+.accent-el { background-color: hsl(var(--accent), .8);}
+.accent-el:hover { background-color: hsl(var(--accent));}
 .primary-el {
   background-color: hsl(var(--primary), .8);
   color: hsl(var(--light));
@@ -121,10 +139,27 @@ body {
   background-color: hsl(var(--primary));
   border-color: hsl(var(--light));
 }
+.secondary-el {
+  background-color: hsl(var(--secondary), .8);
+  color: hsl(var(--light));
+}
+.secondary-el:hover {
+  border-color: hsl(var(--light));
+  background-color: hsl(var(--secondary));
+}
 
+.sm-text-shadow-dark { text-shadow: 1px 1px 1px hsl(var(--dark));}
+.sm-text-outline-primary {
+  text-shadow: 1px 1px 0 hsl(var(--primary)),
+              1px -1px 0 hsl(var(--primary)),
+              -1px -1px 0 hsl(var(--primary)),
+              -1px 1px 0 hsl(var(--primary));
+}
 
 .gap-1 { gap: .5rem;}
 .gap-2 { gap: 1rem;}
+.gap-3 { gap: 1.5rem;}
+.gap-4 { gap: 2rem;}
 
 .p-1 {
   padding: .5rem;
@@ -134,9 +169,12 @@ body {
 .pr-2 { padding-right: 1rem; }
 .pi-2 { padding-inline: 1rem;}
 
-.px-5 {
-  padding-inline: 2.5rem;
-}
+.px-0 { padding-inline: 0px;}
+.px-1 { padding-inline: .5rem;}
+.px-2 { padding-inline: 1rem;}
+.px-3 { padding-inline: 1.5rem;}
+.px-4 { padding-inline: 2rem;}
+.px-5 { padding-inline: 2.5rem;}
 
 .py-1 { padding-block: .5rem}
 .py-2 { padding-block: 1rem;}
@@ -147,6 +185,7 @@ body {
 .col-1to3 { grid-column: 1 / 3;}
 
 /* FLEX */
+.flex { display: flex;}
 .flex-auto {
   flex: auto;
 }
@@ -168,6 +207,19 @@ body {
 .text-primary { color: hsl(var(--primary)) !important;}
 .text-secondary { color: hsl(var(--secondary)) !important;}
 .text-accent { color: hsl(var(--accent)) !important;}
+
+.hover-light,
+.hover-dark,
+.hover-primary,
+.hover-secondary,
+.hover-accent {
+  transition: color var(--transition-sm) linear;
+}
+.hover-accent:hover { color: hsl(var(--accent)) !important;}
+.hover-primary:hover { color: hsl(var(--primary)) !important;}
+.hover-secondary:hover { color: hsl(var(--secondary)) !important;}
+.hover-light:hover { color: hsl(var(--light)) !important;}
+.hover-dark:hover { color: hsl(var(--dark)) !important;}
 
 /* FONT-STYLES */
 .sm-info,
@@ -285,6 +337,16 @@ body {
   right: 0;
   margin: auto;
 }
-.fit {
-  width: fit-content;
-}
+.fit { width: fit-content;}
+.no-list { list-style: none;}
+.cursive { font-family: cursive;}
+.no-dec { text-decoration: none;}
+
+.br-1 { border-radius: .5rem;}
+.br-2 { border-radius: 1rem;}
+
+.ls-1 { letter-spacing: .5px;}
+.ls-2 { letter-spacing: 1px;}
+.ls-3 { letter-spacing: 1.5px;}
+.ls-4 { letter-spacing: 2px;}
+.ls-5 { letter-spacing: 2.5px;}
