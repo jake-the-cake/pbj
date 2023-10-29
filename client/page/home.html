@@ -31,11 +31,11 @@
 <!-- Navbar -->
 <nav class="large-nav center relative" id="large-nav">
 	<!-- Navigation Links -->
-	<ul class="col-1to3 center flex gap-4 unset no-list ls-3 md-message cursive lh-08">
-		<li><a class="text-dark hover-secondary" href="/about">Who Is PBJ</a></li>
-		<li><a class="text-dark hover-secondary" href="/services">Our Services</a></li>
-		<li><a class="text-dark hover-secondary" href="/store">Online Store</a></li>
-		<li><a class="text-dark hover-secondary" href="/contact">Contact Us</a></li>
+	<ul class="col-1to3 center flex gap-4 unset no-list ls-3 md-info cursive lh-08">
+		<li><a class="text-light hover-secondary sm-text-outline-dark" href="/about">Who Is PBJ</a></li>
+		<li><a class="text-light hover-secondary sm-text-outline-dark" href="/services">Our Services</a></li>
+		<li><a class="text-light hover-secondary sm-text-outline-dark" href="/store">Online Store</a></li>
+		<li><a class="text-light hover-secondary sm-text-outline-dark" href="/contact">Contact Us</a></li>
 	</ul>
 
 	<!-- Title Card -->
@@ -52,29 +52,72 @@
 	</div>
 	
 	<!-- LOCATION DESIGNATION -->
-	<div class="col-1to3 md-message text-dark ls-5 sm-text-outline-primary">
+	<div class="col-1to3 cursive md-message text-accent ls-5 py-2 sm-text-outline-light">
 		Servicing New Jersey in Ocean, Monmouth, and beyond.
 	</div>
 
 	<!-- CAROUSEL -->
-	<div class="flex-col gap-2">
-		<div class="md-message ls-2 text-dark">Find The Right Solution From PBJ</div>
-		<div id="carousel">
-
+	<div class="flex-col gap-2 relative">
+		<!-- Buttons -->
+		<div class="flex-between absolute top-half z-1000 w-100 px-1" id="header-carousel-buttons">
+			<button class="accent-el-trans flex square pill center rotate-180">
+				<svg width="15" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
+					<path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+				</svg>
+			</button>
+			<button class="accent-el-trans pill flex square center">
+				<svg width="15" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 24 24">
+					<path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" />
+				</svg>
+			</button>
 		</div>
+
+		<!-- Message -->
+		<div class="md-message ls-2 text-dark">Find The Right Solution From PBJ</div>
+		
+		<!-- Content -->
+		<div id="carousel" class="carousel">
+			<div class="carousel-slide" id="delivery">
+				<div>
+					Point-To-Point Delivery
+				</div>
+			</div>
+			<div class="carousel-slide" id="removal">
+				<div>
+					Junk & Debris Removal
+				</div>
+			</div>
+			<div class="carousel-slide" id="moving">
+				<div>
+					Small Residential Moves
+				</div>
+			</div>
+			<div class="carousel-slide" id="assembly">
+				<div>
+					Furniture Assembly
+				</div>
+			</div>
+			<div class="carousel-slide" id="organizing">
+				<div>
+					Organization & Boxing
+				</div>
+			</div>
+		</div>
+
+		<!-- Actions -->
 		<div id="learn-more" class="flex gap-1 center">
-			<button class="secondary-el px-2 py-1 br-1 sm-message">Learn More</button>
+			<button class="secondary-el px-2 py-1 br-1 sm-message md-shadow-dark" id="header-learn-more" onclick="navigateTo('#')">Learn More</button>
 			<span class="sm-info">or</span>
 			<a href="/services" class="text-dark hover-secondary sm-message">View All Services</a>
 		</div>
 	</div>
 	
 	<!-- Call to Action -->
-	<div class="accent-card text-light flex-col gap-2">
-		<div class="lg-message text-secondary sm-shadow-dark">Get A Free Quote</div>
-		<form class="flex-col gap-2 center" id="header-quote">
-			<span class="md-info text-light">Let us know how we can help you.</span>
-			<button class="primary-el py-2 px-5 pill md-message">Check Now!</button>
+	<div class="accent-card md-shadow-dark text-light flex-col gap-2">
+		<div class="lg-message text-secondary sm-text-outline-dark cursive ls-2 lh-08">Get A Free Quote</div>
+		<form class="flex-col gap-3 center" id="header-quote">
+			<span class="md-info text-light">Let us know how we can help you sharing some basic information. Click below to get started!</span>
+			<button class="primary-el py-1 px-5 pill md-message sm-shadow-dark ls-2">Request Now</button>
 		</form>
 	</div>
 

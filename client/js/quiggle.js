@@ -78,3 +78,5 @@ class QuiggleMultiPageForm {
 		QuiggleDom.removeClass(activeElement, className)
 	}
 }
+
+function navigateTo(url) { window.location = url }
