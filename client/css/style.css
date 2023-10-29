@@ -12,7 +12,7 @@
   --transition-md: 500ms;
   --transition-lg: 750ms;
   
-  --mobile-width: 375px;
+  --mobile-width: 425px;
 }
 
 .unset { all: unset; }
@@ -44,9 +44,8 @@ body {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(2, minmax(250px, var(--mobile-width)));
-  min-height: 400px;
   color: hsl(var(--dark));
-  padding-block: 2rem;
+  padding: 2rem;
   position: relative;
 }
 
@@ -87,7 +86,7 @@ body {
   position: relative;
   overflow: hidden;
   width: 100%;
-  min-height: 100px;
+  min-height: 80px;
 }
 
 .carousel-slide div {
@@ -407,9 +406,6 @@ body {
   .large-nav {
     display: flex;
     flex-direction: column;
-  }
-  .large-nav > * {
-    max-width: 95vw;
   }
 }
 
