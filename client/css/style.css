@@ -151,7 +151,10 @@ body {
 }
 .accent-el {
   background-color: hsl(var(--accent), .8);}
-.accent-el:hover { background-color: hsl(var(--accent));}
+.accent-el:hover {
+  background-color: hsl(var(--accent));
+  border-color: hsl(var(--secondary));
+}
 .primary-el {
   background-color: hsl(var(--primary), .8);
   color: hsl(var(--light));
@@ -218,6 +221,9 @@ body {
 .pl-2 { padding-left: 1rem; }
 .pr-2 { padding-right: 1rem; }
 
+.pt-1 { padding-top: .5rem}
+.pt-2 { padding-top: 1rem;}
+.pt-3 { padding-top: 1.5rem;}
 .pt-4 { padding-top: 2rem;}
 
 .px-0 { padding-inline: 0px;}
@@ -412,8 +418,40 @@ body {
   }
 }
 
+
+
+
+
+
 .w-100 { width: 100%;}
 .square { aspect-ratio: 1;}
 .ai-center { align-items: center;}
 .max-1000 { max-width: 1000px;}
 .m-auto { margin: auto;}
+.mx-auto { margin-inline: auto;}
+
+
+.circle-left,
+.circle-right {
+  min-height: 25vh;
+  width: 100vw;
+  text-align: center;
+  max-height: 50vh;
+  /* height: fit-content; */
+  position: relative;
+}
+
+.circle-left::before {
+  content: '';
+  height: 110%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  transform: translateX(-60%);
+  border: 3px solid hsl(var(--accent), .9);
+}
+
+.circle-light::before {
+  background-color: hsl(var(--light), .8);
+}
