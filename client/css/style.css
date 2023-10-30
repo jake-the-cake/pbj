@@ -212,12 +212,13 @@ body {
 .gap-3 { gap: 1.5rem;}
 .gap-4 { gap: 2rem;}
 
-.p-1 {
-  padding: .5rem;
-}
+.p-1 { padding: .5rem;}
+.p-2 { padding: 1rem;}
 
 .pl-2 { padding-left: 1rem; }
 .pr-2 { padding-right: 1rem; }
+
+.pt-4 { padding-top: 2rem;}
 
 .px-0 { padding-inline: 0px;}
 .px-1 { padding-inline: .5rem;}
@@ -279,7 +280,8 @@ body {
 }
 .sm-message,
 .md-message,
-.lg-message {
+.lg-message,
+.xl-message {
   font-weight: 700;
 }
 .sm-info,
@@ -294,6 +296,7 @@ body {
 .lg-message {
   font-size: 1.6rem;
 }
+.xl-message { font-size: 2rem;}
 
 /* PAGE TITLE AND LOGO LAYOUT */
 .large-logo-bg {
@@ -411,3 +414,6 @@ body {
 
 .w-100 { width: 100%;}
 .square { aspect-ratio: 1;}
+.ai-center { align-items: center;}
+.max-1000 { max-width: 1000px;}
+.m-auto { margin: auto;}
