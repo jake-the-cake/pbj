@@ -1,6 +1,6 @@
 :root {
   --primary-hue: 215;
-  --secondary-hue: 315;
+  --secondary-hue: 305;
   --primary: var(--primary-hue), 48%, 51%;
   --accent: var(--primary-hue), 100%, 20%;
   --secondary: var(--secondary-hue), 80%, 64%;
@@ -31,7 +31,7 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   background-color: hsl(var(--primary));
   width: 100vw;
-  min-height: 110vh;
+  min-height: 100vh;
   margin: 0;
   display: flex;
   align-items: stretch;
@@ -217,6 +217,7 @@ body {
 
 .p-1 { padding: .5rem;}
 .p-2 { padding: 1rem;}
+.p-4 { padding: 2rem;}
 
 .pl-2 { padding-left: 1rem; }
 .pr-2 { padding-right: 1rem; }
@@ -429,29 +430,37 @@ body {
 .max-1000 { max-width: 1000px;}
 .m-auto { margin: auto;}
 .mx-auto { margin-inline: auto;}
+.mt-4 { margin-top: 2rem;}
 
 
 .circle-left,
 .circle-right {
-  min-height: 25vh;
-  width: 100vw;
+  --bg: black;
+  --border: black;
   text-align: center;
-  max-height: 50vh;
-  /* height: fit-content; */
-  position: relative;
+  border: 3px solid var(--border);
+  padding-block: 2rem;
+  background-color: var(--bg);
 }
 
-.circle-left::before {
-  content: '';
-  height: 110%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  position: absolute;
-  left: 0;
-  transform: translateX(-60%);
-  border: 3px solid hsl(var(--accent), .9);
+.circle-left {
+  border-radius: 0 9999px 9999px 0;
+  margin-right: 2rem;
+  border-left: none;
+  padding-left: 2rem;
 }
 
-.circle-light::before {
-  background-color: hsl(var(--light), .8);
+.circle-light {
+  --bg: hsl(var(--light), .2);
+  --border: hsl(var(--accent), .4);
+}
+
+.primary {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--light));
+}
+
+.dark {
+  background-color: hsl(var(--dark));
+  color: hsl(var(--light));
 }
