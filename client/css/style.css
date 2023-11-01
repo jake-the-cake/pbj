@@ -42,10 +42,10 @@ body {
 .large-nav {
   background-image: linear-gradient(35deg, hsl(var(--light)), hsl(var(--light), .7));
   display: grid;
-  gap: 2rem;
+  gap: 4rem;
   grid-template-columns: repeat(2, minmax(250px, var(--mobile-width)));
   color: hsl(var(--dark));
-  padding: 2rem;
+  padding: 4rem;
   position: relative;
 }
 
@@ -214,6 +214,12 @@ body {
 .gap-2 { gap: 1rem;}
 .gap-3 { gap: 1.5rem;}
 .gap-4 { gap: 2rem;}
+.gap-5 { gap: 2.5rem;}
+.gap-6 { gap: 3rem;}
+.gap-7 { gap: 3.5rem;}
+.gap-8 { gap: 4rem;}
+.gap-9 { gap: 4.5rem;}
+.gap-10 { gap: 5rem;}
 
 .p-1 { padding: .5rem;}
 .p-2 { padding: 1rem;}
@@ -226,6 +232,7 @@ body {
 .pt-2 { padding-top: 1rem;}
 .pt-3 { padding-top: 1.5rem;}
 .pt-4 { padding-top: 2rem;}
+.pt-8 { padding-top: 4rem;}
 
 .px-0 { padding-inline: 0px;}
 .px-1 { padding-inline: .5rem;}
@@ -247,6 +254,7 @@ body {
 .flex-auto {
   flex: auto;
 }
+.flex-1 { flex: 1}
 .flex-middle {
   align-items: center;
 }
@@ -258,6 +266,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+.jc-stretch { align-items: stretch;}
 
  /* FONT-COLORS */
 .text-light { color: hsl(var(--light)) !important;}
@@ -420,17 +429,27 @@ body {
 }
 
 
+.accent-trans-grad {
+  width: 100%;
+  padding: 2rem;
+  --deg: 60deg;
+  background-image: linear-gradient(var(--deg), transparent 5%, hsl(var(--accent), .6) 75%, transparent 95%);
+}
+
 
 
 
 
 .w-100 { width: 100%;}
+.w-auto { width: auto;}
 .square { aspect-ratio: 1;}
 .ai-center { align-items: center;}
 .max-1000 { max-width: 1000px;}
 .m-auto { margin: auto;}
+.mr-auto { margin-right: auto;}
 .mx-auto { margin-inline: auto;}
 .mt-4 { margin-top: 2rem;}
+.mt-8 { margin-top: 4rem;}
 
 
 .circle-left,
@@ -439,7 +458,7 @@ body {
   --border: black;
   text-align: center;
   border: 3px solid var(--border);
-  padding-block: 2rem;
+  padding-block: 4rem;
   background-color: var(--bg);
 }
 
@@ -447,7 +466,8 @@ body {
   border-radius: 0 9999px 9999px 0;
   margin-right: 2rem;
   border-left: none;
-  padding-left: 2rem;
+  padding-left: 5rem;
+  padding-right: 3rem;
 }
 
 .circle-light {
@@ -464,3 +484,7 @@ body {
   background-color: hsl(var(--dark));
   color: hsl(var(--light));
 }
+
+.o-5 { opacity: .5;}
+.o-6 { opacity: .6;}
+.o-7 { opacity: .7;}
