@@ -267,6 +267,7 @@ body {
   flex-direction: column;
 }
 .jc-stretch { align-items: stretch;}
+.jc-end { justify-content: end;}
 
  /* FONT-COLORS */
 .text-light { color: hsl(var(--light)) !important;}
@@ -456,18 +457,30 @@ body {
 .circle-right {
   --bg: black;
   --border: black;
+  --arch-padding: 6rem;
+  --block-padding: 2rem;
   text-align: center;
   border: 3px solid var(--border);
   padding-block: 4rem;
   background-color: var(--bg);
+  overflow: hidden;
 }
 
 .circle-left {
   border-radius: 0 9999px 9999px 0;
   margin-right: 2rem;
   border-left: none;
-  padding-left: 5rem;
-  padding-right: 3rem;
+  padding-left: var(--block-padding);
+  padding-right: var(--arch-padding);
+}
+
+.circle-right {
+  border-radius: 9999px 0 0 9999px;
+  margin-left: 2rem;
+  border-right: none;
+  padding-right: var(--block-padding);
+  padding-left: var(--arch-padding);
+
 }
 
 .circle-light {
